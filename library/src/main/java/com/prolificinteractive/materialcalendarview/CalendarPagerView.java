@@ -1,5 +1,6 @@
 package com.prolificinteractive.materialcalendarview;
 
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.View;
@@ -102,6 +103,12 @@ abstract class CalendarPagerView extends ViewGroup implements View.OnClickListen
             this.decoratorResults.addAll(results);
         }
         invalidateDecorators();
+    }
+
+    public void setWeekDayBackground(Drawable drawable) {
+        for (WeekDayView weekDayView : weekDayViews) {
+            weekDayView.setBackgroundDrawable(drawable);
+        }
     }
 
     public void setWeekDayTextAppearance(int taId) {
